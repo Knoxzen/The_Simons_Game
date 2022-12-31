@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "carnival";
+  src: url(Fonts/Carnevalee\ Freakshow.ttf);
+}
+@font-face {
+  font-family: "railroad";
+  src: url(Fonts/IFC\ RAILROAD\ 2.ttf);
+}
+
+body {
+  text-align: center;
+  background-color: red;
+  background-image: url(newbg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#header {
+  padding: 1%;
+  font-size: 6rem;
+  font-family: "carnival", cursive;
+  color: #f49d1a;
+  text-shadow: #9a5d02 6px 4px;
+}
+
+h2 {
+  font-size: 4rem;
+  font-family: "railroad", cursive;
+  color: #f49d1a;
+  text-shadow: #9a5d02 4px 3px;
+}
+
+#title {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* Game over Flash Screen */
+.game-over {
+  opacity: 0.3;
+}
+
+/* Button Container Styling */
+.press {
+  outline: none;
+  width: 230px;
+  height: 235px;
+  display: inline-block;
+  text-align: center;
+  padding: 2%;
+  margin: 20px;
+}
+
+/* Glow Buttons */
+.redglow {
+  background-image: url(Game_Button/Red_button_glow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blueglow {
+  background-image: url(Game_Button/Blue_button_glow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.greenglow {
+  background-image: url(Game_Button/Green_button_glow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.yellowglow {
+  background-image: url(Game_Button/Yellow_button_glow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Normal Buttons */
+.red {
+  background-image: url(Game_Button/Red_button.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blue {
+  background-image: url(Game_Button/Blue_button.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.green {
+  background-image: url(Game_Button/Green_button.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.yellow {
+  background-image: url(Game_Button/Yellow_button.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* audio buttons */
+#Soundcontroller {
+  font-family: "railroad", cursive;
+  font-size: 2.5rem;
+  color: #f49d1a;
+  text-shadow: #9a5d02 3px 2px;
+  background: none;
+  border: none;
+  display: inline-block;
+  position: absolute;
+  /* top: 20px; */
+  /* left: 100px; */
+  text-align: right;
+  left: 2%;
+  top: 2%;
+}
