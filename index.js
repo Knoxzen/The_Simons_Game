@@ -1,4 +1,3 @@
-
 var buttoncolor = ["red", "blue", "green", "yellow"];
 var userpattern = [];
 var gamepattern = [];
@@ -15,6 +14,15 @@ $(document).keypress(function () {
   }
 });
 
+// handle the touch event
+document.querySelector(".btn-formob").addEventListener("touchstart", function() {
+  if (!start) {
+    $("#title").text("Level " + gamelevel);
+    nextsequence();
+    start = true;
+  }
+});
+
 // Function to perform button clicks
 $(".butn").click(function () {
   var usercolor = $(this).attr("id");
@@ -24,13 +32,13 @@ $(".butn").click(function () {
   soundplay(usercolor);
 });
 
-// Fubction to check the animation
+// Fubction to check the answer
 function answercheck(nowlevel) {
   if (gamepattern[nowlevel] === userpattern[nowlevel]) {
     if (userpattern.length === gamepattern.length) {
       setTimeout(function () {
         nextsequence();
-      }, 1000);
+      }, 500);
     }
   } else {
     $("#title").text("Gameover");
@@ -38,6 +46,15 @@ function answercheck(nowlevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
+    setTimeout(function () {
+      $("#title").text("Press any key to start");
+    }, 500);
+    if (window.innerWidth <= 900) {
+      // Change the text for mobile devices
+      setTimeout(function () {
+        $("#title").text("Press Play");
+      }, 500);
+    } 
     startover();
     soundplay("wrong");
   }
@@ -91,20 +108,13 @@ function startover() {
   gamepattern = [];
   gamelevel = 0;
 }
-
-//music controls
-
-function togglePlay() {
-  var myAudio = document.getElementById("myAudio");
-  return myAudio.paused ? myAudio.play() : myAudio.pause();
+// Change the text for mobile devices
+function changeText() {
+  if (window.innerWidth <= 900) {
+    document.querySelector("#title").textContent = "Press Play";
+  } 
 }
 
-const button = document.querySelector("input");
-button.addEventListener("click", updateButton);
-function updateButton() {
-  if (button.value === "music") {
-    button.value = "muted";
-  } else {
-    button.value = "music";
-  }
-}
+window.onload = changeText;
+
+

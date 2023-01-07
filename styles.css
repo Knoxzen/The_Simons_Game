@@ -6,6 +6,9 @@
   font-family: "railroad";
   src: url(Fonts/IFC\ RAILROAD\ 2.ttf);
 }
+.fa-solid{
+  cursor: pointer;
+}
 
 body {
   text-align: center;
@@ -31,6 +34,11 @@ h2 {
   text-shadow: #9a5d02 4px 3px;
 }
 
+#highscore{
+  display: inline-block;
+}
+
+/* Press any key to start */
 #title {
   margin-top: 2%;
   margin-bottom: 2%;
@@ -40,7 +48,7 @@ h2 {
 .game-over {
   opacity: 0.3;
 }
-
+/* ---------------------------------------------------------------------------------------------------- */
 /* Button Container Styling */
 .press {
   outline: none;
@@ -50,6 +58,11 @@ h2 {
   text-align: center;
   padding: 2%;
   margin: 20px;
+}
+
+/* Button for mobile devices */
+.btn-formob{
+  display: none;
 }
 
 /* Glow Buttons */
@@ -98,7 +111,8 @@ h2 {
 
 /* audio buttons */
 #Soundcontroller {
-  font-family: "railroad", cursive;
+  /* font-family: "railroad", cursive; */
+  font-family: 'Font Awesome 5 Free';
   font-size: 2.5rem;
   color: #f49d1a;
   text-shadow: #9a5d02 3px 2px;
@@ -106,9 +120,76 @@ h2 {
   border: none;
   display: inline-block;
   position: absolute;
-  /* top: 20px; */
-  /* left: 100px; */
   text-align: right;
   left: 2%;
   top: 2%;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Media Querry */
+
+@media (max-width: 900px)
+{
+  #header{
+    margin-top: 10%;
+    font-size: 3rem;
+    text-shadow: #9a5d02 1px 2px;
+  }
+  #title {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 2rem;
+    text-shadow: none;
+  }
+  #Soundcontroller {
+    font-family: "railroad", cursive;
+    font-size: 2.5rem;
+    color: #f49d1a;
+    text-shadow: none;
+    background: none;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    font-size: 1rem;
+    text-align: right;
+    left: 2%;
+    top: 2%;
+  }
+  .press {
+    outline: none;
+    width: 154px;
+    height: 156px;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    margin: 5px;
+  }
+  #highscore
+  {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 20px;
+    padding-bottom: 2px;
+    text-shadow: #9a5d02 1px 2px;
+
+  }
+  .btn-formob
+  {
+    font-family: "railroad", cursive;
+    font-size: 1rem;
+    border: 0;
+    line-height: 2.5;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    bottom: 5%;
+    background-color: #f49d1a;
+  }
+  .btn-formob:active {
+    background-color: #ac6f13;
+}
+
 }
